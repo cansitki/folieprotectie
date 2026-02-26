@@ -16,13 +16,15 @@
         }
 
         :root {
-            --primary: #ff6b35;
-            --primary-dark: #e55a2b;
-            --dark: #0a0a0a;
-            --darker: #050505;
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --primary-light: #3b82f6;
+            --dark: #0f172a;
+            --darker: #020617;
             --light: #ffffff;
-            --gray: #888888;
-            --success: #4ade80;
+            --gray: #94a3b8;
+            --success: #10b981;
+            --cyan: #0ea5e9;
         }
 
         html {
@@ -37,25 +39,40 @@
             overflow-x: hidden;
         }
 
-        /* Sticky CTA */
-        .sticky-cta {
+        /* Header */
+        header {
             position: fixed;
-            bottom: 0;
+            top: 0;
             left: 0;
             right: 0;
-            background: rgba(10, 10, 10, 0.95);
+            background: rgba(15, 23, 42, 0.95);
             backdrop-filter: blur(10px);
             padding: 16px 20px;
             display: flex;
-            gap: 12px;
+            justify-content: space-between;
+            align-items: center;
             z-index: 1000;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
         }
 
-        .sticky-cta a {
-            flex: 1;
-            text-align: center;
-            padding: 14px 20px;
+        .logo {
+            font-size: 20px;
+            font-weight: 800;
+            color: var(--light);
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: var(--primary-light);
+        }
+
+        .header-cta {
+            display: flex;
+            gap: 12px;
+        }
+
+        .header-btn {
+            padding: 10px 20px;
             border-radius: 8px;
             font-weight: 600;
             font-size: 14px;
@@ -63,13 +80,13 @@
             transition: all 0.3s;
         }
 
-        .sticky-cta .btn-primary {
+        .header-btn.primary {
             background: var(--primary);
             color: white;
         }
 
-        .sticky-cta .btn-secondary {
-            background: rgba(255, 255, 255, 0.1);
+        .header-btn.whatsapp {
+            background: #25D366;
             color: white;
         }
 
@@ -81,7 +98,7 @@
             justify-content: center;
             align-items: center;
             text-align: center;
-            padding: 80px 20px 100px;
+            padding: 120px 20px 80px;
             background: linear-gradient(180deg, var(--darker) 0%, var(--dark) 100%);
             position: relative;
             overflow: hidden;
@@ -94,7 +111,7 @@
             right: -20%;
             width: 80%;
             height: 150%;
-            background: radial-gradient(circle, rgba(255, 107, 53, 0.15) 0%, transparent 70%);
+            background: radial-gradient(circle, rgba(37, 99, 235, 0.2) 0%, transparent 70%);
             animation: pulse 4s ease-in-out infinite;
         }
 
@@ -104,18 +121,18 @@
         }
 
         .hero-badge {
-            background: rgba(255, 107, 53, 0.15);
-            color: var(--primary);
+            background: rgba(37, 99, 235, 0.2);
+            color: var(--primary-light);
             padding: 8px 16px;
             border-radius: 20px;
             font-size: 13px;
             font-weight: 600;
             margin-bottom: 24px;
-            border: 1px solid rgba(255, 107, 53, 0.3);
+            border: 1px solid rgba(37, 99, 235, 0.4);
         }
 
         .hero h1 {
-            font-size: 36px;
+            font-size: 42px;
             font-weight: 800;
             line-height: 1.1;
             margin-bottom: 16px;
@@ -123,13 +140,13 @@
         }
 
         .hero h1 span {
-            color: var(--primary);
+            color: var(--primary-light);
         }
 
         .hero p {
-            font-size: 16px;
+            font-size: 18px;
             color: var(--gray);
-            max-width: 500px;
+            max-width: 600px;
             margin-bottom: 32px;
         }
 
@@ -155,28 +172,29 @@
         .btn-primary {
             background: var(--primary);
             color: white;
-            box-shadow: 0 4px 20px rgba(255, 107, 53, 0.4);
+            box-shadow: 0 4px 20px rgba(37, 99, 235, 0.4);
         }
 
         .btn-primary:hover {
             background: var(--primary-dark);
             transform: translateY(-2px);
-            box-shadow: 0 6px 30px rgba(255, 107, 53, 0.5);
+            box-shadow: 0 6px 30px rgba(37, 99, 235, 0.5);
         }
 
-        .btn-secondary {
-            background: rgba(255, 255, 255, 0.1);
+        .btn-whatsapp {
+            background: #25D366;
             color: white;
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
         }
 
-        .btn-secondary:hover {
-            background: rgba(255, 255, 255, 0.15);
+        .btn-whatsapp:hover {
+            background: #20bd5a;
+            transform: translateY(-2px);
         }
 
         .hero-stats {
             display: flex;
-            gap: 32px;
+            gap: 40px;
             margin-top: 48px;
             flex-wrap: wrap;
             justify-content: center;
@@ -187,9 +205,9 @@
         }
 
         .stat-value {
-            font-size: 32px;
+            font-size: 36px;
             font-weight: 800;
-            color: var(--primary);
+            color: var(--primary-light);
         }
 
         .stat-label {
@@ -198,10 +216,9 @@
             margin-top: 4px;
         }
 
-        /* Problem Section */
-        .problem {
+        /* Section Styles */
+        section {
             padding: 80px 20px;
-            background: var(--darker);
         }
 
         .section-header {
@@ -210,7 +227,7 @@
         }
 
         .section-label {
-            color: var(--primary);
+            color: var(--primary-light);
             font-size: 13px;
             font-weight: 600;
             text-transform: uppercase;
@@ -219,7 +236,7 @@
         }
 
         .section-title {
-            font-size: 32px;
+            font-size: 36px;
             font-weight: 700;
             line-height: 1.2;
             margin-bottom: 16px;
@@ -232,143 +249,157 @@
             margin: 0 auto;
         }
 
-        .problem-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
-            max-width: 1000px;
+        /* What is PPF Section */
+        .what-is-ppf {
+            background: var(--darker);
+        }
+
+        .ppf-content {
+            max-width: 900px;
             margin: 0 auto;
         }
 
-        .problem-card {
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(255, 255, 255, 0.08);
+        .ppf-description {
+            font-size: 16px;
+            line-height: 1.8;
+            color: var(--gray);
+            margin-bottom: 32px;
+        }
+
+        .ppf-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        .ppf-card {
+            background: rgba(37, 99, 235, 0.1);
+            border: 1px solid rgba(37, 99, 235, 0.2);
             border-radius: 12px;
             padding: 24px;
             text-align: center;
         }
 
-        .problem-icon {
+        .ppf-card-icon {
             font-size: 40px;
             margin-bottom: 16px;
         }
 
-        .problem-card h3 {
+        .ppf-card h3 {
             font-size: 18px;
             font-weight: 600;
             margin-bottom: 8px;
+            color: var(--light);
         }
 
-        .problem-card p {
+        .ppf-card p {
             font-size: 14px;
             color: var(--gray);
         }
 
-        /* Solution Section */
-        .solution {
-            padding: 80px 20px;
+        /* Benefits Section */
+        .benefits {
             background: var(--dark);
         }
 
-        .solution-content {
-            max-width: 800px;
+        .benefits-grid {
+            max-width: 1000px;
             margin: 0 auto;
-        }
-
-        .benefits-list {
             display: grid;
             gap: 16px;
-            margin-top: 32px;
         }
 
         .benefit-item {
             display: flex;
             align-items: flex-start;
             gap: 16px;
-            padding: 20px;
-            background: rgba(255, 107, 53, 0.05);
+            padding: 24px;
+            background: rgba(37, 99, 235, 0.08);
             border-radius: 12px;
-            border-left: 3px solid var(--primary);
+            border-left: 4px solid var(--primary-light);
+            transition: all 0.3s;
+        }
+
+        .benefit-item:hover {
+            background: rgba(37, 99, 235, 0.12);
+            transform: translateX(8px);
         }
 
         .benefit-check {
-            width: 24px;
-            height: 24px;
+            width: 28px;
+            height: 28px;
             background: var(--primary);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 14px;
+            font-size: 16px;
             flex-shrink: 0;
+            color: white;
         }
 
         .benefit-text h4 {
-            font-size: 16px;
+            font-size: 17px;
             font-weight: 600;
-            margin-bottom: 4px;
+            margin-bottom: 6px;
+            color: var(--light);
         }
 
         .benefit-text p {
             font-size: 14px;
             color: var(--gray);
+            line-height: 1.6;
         }
 
-        /* Before/After Section */
-        .before-after {
-            padding: 80px 20px;
+        /* How We Work Section */
+        .how-we-work {
             background: var(--darker);
         }
 
-        .comparison {
+        .process-steps {
             max-width: 800px;
             margin: 0 auto;
-            background: rgba(255, 255, 255, 0.03);
-            border-radius: 16px;
-            overflow: hidden;
-        }
-
-        .comparison-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            gap: 24px;
         }
 
-        .comparison-item {
-            padding: 40px 20px;
-            text-align: center;
+        .process-step {
+            display: flex;
+            gap: 20px;
+            padding: 24px;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
         }
 
-        .comparison-item.before {
-            background: rgba(239, 68, 68, 0.1);
-            border-right: 2px solid rgba(255, 255, 255, 0.1);
+        .step-number {
+            width: 48px;
+            height: 48px;
+            background: var(--primary);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            font-weight: 800;
+            flex-shrink: 0;
         }
 
-        .comparison-item.after {
-            background: rgba(74, 222, 128, 0.1);
-        }
-
-        .comparison-label {
+        .step-content h3 {
             font-size: 18px;
-            font-weight: 700;
+            font-weight: 600;
             margin-bottom: 8px;
         }
 
-        .comparison-item.before .comparison-label {
-            color: #ef4444;
-        }
-
-        .comparison-item.after .comparison-label {
-            color: #4ade80;
-        }
-
-        .comparison-item p {
+        .step-content p {
             font-size: 14px;
             color: var(--gray);
+            line-height: 1.6;
         }
 
         /* Pricing Section */
         .pricing {
-            padding: 80px 20px;
             background: var(--dark);
         }
 
@@ -376,7 +407,7 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 20px;
-            max-width: 1000px;
+            max-width: 1100px;
             margin: 0 auto;
         }
 
@@ -389,23 +420,41 @@
             transition: all 0.3s;
         }
 
-        .pricing-card.featured {
+        .pricing-card:hover {
             border-color: var(--primary);
-            box-shadow: 0 0 30px rgba(255, 107, 53, 0.2);
-            transform: scale(1.02);
+            transform: translateY(-4px);
+        }
+
+        .pricing-card.featured {
+            border-color: var(--primary-light);
+            box-shadow: 0 0 40px rgba(37, 99, 235, 0.3);
+            position: relative;
+        }
+
+        .pricing-card.featured::before {
+            content: '⭐ Recomandat';
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--primary);
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 600;
         }
 
         .pricing-card h3 {
-            font-size: 20px;
+            font-size: 22px;
             font-weight: 700;
             margin-bottom: 8px;
         }
 
         .pricing-card .price {
-            font-size: 36px;
+            font-size: 40px;
             font-weight: 800;
-            color: var(--primary);
-            margin: 16px 0;
+            color: var(--primary-light);
+            margin: 20px 0;
         }
 
         .pricing-card .price span {
@@ -421,23 +470,23 @@
         }
 
         .pricing-features li {
-            padding: 8px 0;
+            padding: 10px 0;
             font-size: 14px;
             color: var(--gray);
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 10px;
         }
 
         .pricing-features li::before {
             content: '✓';
             color: var(--success);
             font-weight: 700;
+            font-size: 16px;
         }
 
         /* Testimonials */
         .testimonials {
-            padding: 80px 20px;
             background: var(--darker);
         }
 
@@ -467,6 +516,7 @@
             line-height: 1.6;
             margin-bottom: 16px;
             font-style: italic;
+            color: var(--gray);
         }
 
         .testimonial-author {
@@ -496,96 +546,55 @@
             color: var(--gray);
         }
 
-        /* Form Section */
-        .form-section {
-            padding: 80px 20px 120px;
-            background: var(--dark);
-        }
-
-        .form-container {
-            max-width: 500px;
-            margin: 0 auto;
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            border-radius: 16px;
-            padding: 32px 24px;
-        }
-
-        .form-group {
-            margin-bottom: 20px;
-        }
-
-        .form-group label {
-            display: block;
-            font-size: 14px;
-            font-weight: 500;
-            margin-bottom: 8px;
-        }
-
-        .form-group input,
-        .form-group select,
-        .form-group textarea {
-            width: 100%;
-            padding: 14px 16px;
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 8px;
-            color: var(--light);
-            font-size: 15px;
-            font-family: inherit;
-            outline: none;
-            transition: all 0.3s;
-        }
-
-        .form-group input:focus,
-        .form-group select:focus,
-        .form-group textarea:focus {
-            border-color: var(--primary);
-            background: rgba(255, 255, 255, 0.08);
-        }
-
-        .form-group textarea {
-            resize: vertical;
-            min-height: 100px;
-        }
-
-        .form-submit {
-            width: 100%;
-            padding: 16px;
-            background: var(--primary);
-            color: white;
-            border: none;
-            border-radius: 8px;
-            font-size: 16px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-
-        .form-submit:hover {
-            background: var(--primary-dark);
-            transform: translateY(-2px);
-        }
-
-        .urgency {
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--cyan) 100%);
+            padding: 80px 20px;
             text-align: center;
-            margin-top: 24px;
-            padding: 16px;
-            background: rgba(255, 107, 53, 0.1);
-            border-radius: 8px;
-            border: 1px solid rgba(255, 107, 53, 0.3);
         }
 
-        .urgency p {
-            font-size: 14px;
+        .cta-section h2 {
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        .cta-section p {
+            font-size: 18px;
+            margin-bottom: 32px;
+            opacity: 0.95;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-white {
+            background: white;
             color: var(--primary);
-            font-weight: 600;
+        }
+
+        .btn-white:hover {
+            background: rgba(255, 255, 255, 0.9);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+
+        .btn-outline:hover {
+            background: rgba(255, 255, 255, 0.1);
         }
 
         /* Footer */
         footer {
-            padding: 40px 20px;
             background: var(--darker);
+            padding: 40px 20px;
             text-align: center;
             border-top: 1px solid rgba(255, 255, 255, 0.08);
         }
@@ -595,14 +604,44 @@
             color: var(--gray);
         }
 
+        /* Sticky Mobile CTA */
+        .sticky-cta {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(15, 23, 42, 0.98);
+            backdrop-filter: blur(10px);
+            padding: 12px 20px;
+            display: flex;
+            gap: 12px;
+            z-index: 1000;
+            border-top: 1px solid rgba(37, 99, 235, 0.3);
+        }
+
+        .sticky-cta a {
+            flex: 1;
+            text-align: center;
+            padding: 14px 20px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 14px;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
         /* Responsive */
         @media (max-width: 768px) {
             .hero h1 {
-                font-size: 28px;
+                font-size: 32px;
             }
 
             .hero p {
-                font-size: 15px;
+                font-size: 16px;
+            }
+
+            .section-title {
+                font-size: 28px;
             }
 
             .hero-stats {
@@ -613,43 +652,39 @@
                 font-size: 28px;
             }
 
-            .section-title {
-                font-size: 26px;
+            .header-cta {
+                display: none;
             }
 
-            .comparison-grid {
-                grid-template-columns: 1fr;
+            .process-step {
+                flex-direction: column;
+                text-align: center;
             }
 
-            .comparison-item.before {
-                border-right: none;
-                border-bottom: 2px solid rgba(255, 255, 255, 0.1);
-            }
-
-            .pricing-card.featured {
-                transform: none;
-            }
-
-            .sticky-cta {
-                padding: 12px 16px;
-            }
-
-            .sticky-cta a {
-                padding: 12px 16px;
-                font-size: 13px;
+            .step-number {
+                margin: 0 auto;
             }
         }
     </style>
 </head>
 <body>
+    <!-- Header -->
+    <header>
+        <a href="#" class="logo">PPF<span>Protect</span></a>
+        <div class="header-cta">
+            <a href="https://wa.me/40700000000" class="header-btn whatsapp">WhatsApp</a>
+            <a href="#contact" class="header-btn primary">Cere Ofertă</a>
+        </div>
+    </header>
+
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-badge">🔥 Doar 5 Locuri Disponibile Luna Aceasta</div>
         <h1>Protejează Vopseaua Mașinii Tale pentru <span>10 Ani</span></h1>
-        <p>Folie Protecție Caroserie PPF - Invizibilă, Auto-Vindecabilă, cu Garanție Extinsă</p>
+        <p>Folie Protecție Caroserie PPF - Invizibilă, Auto-Vindecabilă, cu Garanție Extinsă. Montaj profesional în 1-2 zile.</p>
         <div class="hero-buttons">
-            <a href="#formular" class="btn btn-primary">Cere Ofertă în 30 Secunde</a>
-            <a href="#beneficii" class="btn btn-secondary">Vezi Beneficiile</a>
+            <a href="#contact" class="btn btn-primary">📅 Programare Rapidă</a>
+            <a href="https://wa.me/40700000000" class="btn btn-whatsapp">💬 WhatsApp</a>
         </div>
         <div class="hero-stats">
             <div class="stat">
@@ -667,106 +702,111 @@
         </div>
     </section>
 
-    <!-- Problem Section -->
-    <section class="problem">
+    <!-- What is PPF Section -->
+    <section class="what-is-ppf">
         <div class="section-header">
-            <div class="section-label">De Ce Ai Nevoie</div>
-            <h2 class="section-title">Vopseaua Mașinii Tale e în Pericol</h2>
-            <p class="section-subtitle">Fără protecție, mașina ta e expusă zilnic la daune care costă mii de euro</p>
+            <div class="section-label">Ce Este</div>
+            <h2 class="section-title">PPF – Paint Protection Film</h2>
+            <p class="section-subtitle">Tot ce trebuie să știi despre folia de protecție pentru caroserie</p>
         </div>
-        <div class="problem-grid">
-            <div class="problem-card">
-                <div class="problem-icon">🪨</div>
-                <h3>Pietre Sărite</h3>
-                <p>Impactul la viteză creează ciobituri în vopsea care ruginesc în timp</p>
-            </div>
-            <div class="problem-card">
-                <div class="problem-icon">🐛</div>
-                <h3>Insecte & Rășină</h3>
-                <p>Acizii din insecte și rășina de copaci pătează vopseaua permanent</p>
-            </div>
-            <div class="problem-card">
-                <div class="problem-icon">🧼</div>
-                <h3>Zgârieturi Spălări</h3>
-                <p>Spălările automate lasă micro-zgârieturi vizibile la soare</p>
-            </div>
-            <div class="problem-card">
-                <div class="problem-icon">❄️</div>
-                <h3>Sare & Iarnă</h3>
-                <p>Sarea de pe drumuri corodează vopseaua și componentele</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Solution Section -->
-    <section class="solution" id="beneficii">
-        <div class="section-header">
-            <div class="section-label">Soluția</div>
-            <h2 class="section-title">Folia PPF Protejează Tot</h2>
-            <p class="section-subtitle">Ca o carcasă de telefon pentru mașina ta - invizibilă dar extrem de rezistentă</p>
-        </div>
-        <div class="solution-content">
-            <div class="benefits-list">
-                <div class="benefit-item">
-                    <div class="benefit-check">✓</div>
-                    <div class="benefit-text">
-                        <h4>Auto-Vindecabilă</h4>
-                        <p>Zgârieturile superficiale dispar la căldură (soare sau apă caldă)</p>
-                    </div>
+        <div class="ppf-content">
+            <p class="ppf-description">
+                Folia de protecție PPF este un strat subțire, transparent, aplicat pe exteriorul mașinii pentru protecția vopselei. 
+                Scopul principal: protejează caroseria de daune cauzate de pietriș, insecte, zgârieturi, raze UV și factori agresivi din mediul înconjurător.
+            </p>
+            <div class="ppf-grid">
+                <div class="ppf-card">
+                    <div class="ppf-card-icon">🛡️</div>
+                    <h3>Protecție Maximă</h3>
+                    <p>Absoarbe impactul în locul vopselei, prevenind ciobiturile și zgârieturile</p>
                 </div>
-                <div class="benefit-item">
-                    <div class="benefit-check">✓</div>
-                    <div class="benefit-text">
-                        <h4>Invizibilă 100%</h4>
-                        <p>Nu schimbă aspectul mașinii - se vede doar vopseaua originală</p>
-                    </div>
+                <div class="ppf-card">
+                    <div class="ppf-card-icon">✨</div>
+                    <h3>Auto-Vindecabilă</h3>
+                    <p>Zgârieturile superficiale dispar la căldură (soare sau apă caldă)</p>
                 </div>
-                <div class="benefit-item">
-                    <div class="benefit-check">✓</div>
-                    <div class="benefit-text">
-                        <h4>Rezistență Maximă</h4>
-                        <p>Protejează împotriva pietrelor, insectelor, sării și UV</p>
-                    </div>
-                </div>
-                <div class="benefit-item">
-                    <div class="benefit-check">✓</div>
-                    <div class="benefit-text">
-                        <h4>Menține Valoarea</h4>
-                        <p>La revânzare, vopseaua e perfectă - valoare mai mare cu 15-20%</p>
-                    </div>
-                </div>
-                <div class="benefit-item">
-                    <div class="benefit-check">✓</div>
-                    <div class="benefit-text">
-                        <h4>Se Scoate Fără Urme</h4>
-                        <p>Când o scoți după 10 ani, vopseaua e ca nouă sub folie</p>
-                    </div>
+                <div class="ppf-card">
+                    <div class="ppf-card-icon">👁️</div>
+                    <h3>Invizibilă</h3>
+                    <p>Nu schimbă aspectul mașinii - se vede doar vopseaua originală</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Before/After Section -->
-    <section class="before-after">
+    <!-- Benefits Section -->
+    <section class="benefits">
         <div class="section-header">
-            <div class="section-label">Comparație</div>
-            <h2 class="section-title">Cu vs. Fără PPF</h2>
+            <div class="section-label">Beneficii</div>
+            <h2 class="section-title">De Ce Să Alegi PPF?</h2>
+            <p class="section-subtitle">Avantaje reale pentru utilizarea zilnică și protecția pe termen lung</p>
         </div>
-        <div class="comparison">
-            <div class="comparison-grid">
-                <div class="comparison-item before">
-                    <div class="comparison-label">❌ Fără PPF</div>
-                    <p>Ciobituri de la pietre</p>
-                    <p>Zgârieturi vizibile</p>
-                    <p>Vopsea tocită de UV</p>
-                    <p>Reparații: 500-2000€</p>
+        <div class="benefits-grid">
+            <div class="benefit-item">
+                <div class="benefit-check">✓</div>
+                <div class="benefit-text">
+                    <h4>Păstrează Aspectul Impecabil</h4>
+                    <p>Vopseaua rămâne ca nouă ani de zile, fără ciobituri, zgârieturi sau decolorare de la UV</p>
                 </div>
-                <div class="comparison-item after">
-                    <div class="comparison-label">✅ Cu PPF</div>
-                    <p>Vopsea intactă</p>
-                    <p>Fără zgârieturi</p>
-                    <p>Culoare protejată 10 ani</p>
-                    <p>Reparații: 0€</p>
+            </div>
+            <div class="benefit-item">
+                <div class="benefit-check">✓</div>
+                <div class="benefit-text">
+                    <h4>Crește Valoarea de Revânzare</h4>
+                    <p>La revânzare, mașina arată impecabil - poți cere cu 15-20% mai mult</p>
+                </div>
+            </div>
+            <div class="benefit-item">
+                <div class="benefit-check">✓</div>
+                <div class="benefit-text">
+                    <h4>Reduce Costurile de Întreținere</h4>
+                    <p>Nu mai ai nevoie de reparații scumpe ale vopselei - economisești sute de euro</p>
+                </div>
+            </div>
+            <div class="benefit-item">
+                <div class="benefit-check">✓</div>
+                <div class="benefit-text">
+                    <h4>Protecție UV și Murdărie</h4>
+                    <p>Blochează razele UV care decolorează vopseaua și respinge murdăria</p>
+                </div>
+            </div>
+            <div class="benefit-item">
+                <div class="benefit-check">✓</div>
+                <div class="benefit-text">
+                    <h4>Îmbunătățește Confortul la Condus</h4>
+                    <p>Știi că mașina ta e protejată - conduci fără griji pe orice drum</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How We Work Section -->
+    <section class="how-we-work">
+        <div class="section-header">
+            <div class="section-label">Procesul Nostru</div>
+            <h2 class="section-title">Cum Lucrăm</h2>
+            <p class="section-subtitle">Montaj profesional în 3 pași simpli</p>
+        </div>
+        <div class="process-steps">
+            <div class="process-step">
+                <div class="step-number">1</div>
+                <div class="step-content">
+                    <h3>Curățare & Pregătire</h3>
+                    <p>Decontaminare completă a vopselei, corectare defecte minore, degresare pentru aderență perfectă</p>
+                </div>
+            </div>
+            <div class="process-step">
+                <div class="step-number">2</div>
+                <div class="step-content">
+                    <h3>Aplicare PPF</h3>
+                    <p>Montaj folie cu tehnică precision, fără bule, cu finisarea marginilor pentru aspect factory</p>
+                </div>
+            </div>
+            <div class="process-step">
+                <div class="step-number">3</div>
+                <div class="step-content">
+                    <h3>Finisare & Livrare</h3>
+                    <p>Verificare calitate, uscare finală, instrucțiuni întreținere și certificatul de garanție 10 ani</p>
                 </div>
             </div>
         </div>
@@ -789,10 +829,9 @@
                     <li>Garanție 5 ani</li>
                     <li>Durată: 1 zi</li>
                 </ul>
-                <a href="#formular" class="btn btn-secondary" style="width: 100%">Cere Ofertă</a>
+                <a href="#contact" class="btn btn-primary" style="width: 100%">Cere Ofertă</a>
             </div>
             <div class="pricing-card featured">
-                <div class="hero-badge" style="margin-bottom: 16px;">⭐ Cel Mai Popular</div>
                 <h3>Complet</h3>
                 <div class="price">de la 1200€</div>
                 <ul class="pricing-features">
@@ -802,7 +841,7 @@
                     <li>Durată: 2 zile</li>
                     <li>Întreținere inclusă</li>
                 </ul>
-                <a href="#formular" class="btn btn-primary" style="width: 100%">Cere Ofertă</a>
+                <a href="#contact" class="btn btn-primary" style="width: 100%">Cere Ofertă</a>
             </div>
             <div class="pricing-card">
                 <h3>Premium</h3>
@@ -814,7 +853,7 @@
                     <li>Durată: 3-4 zile</li>
                     <li>Întreținere pe viață</li>
                 </ul>
-                <a href="#formular" class="btn btn-secondary" style="width: 100%">Cere Ofertă</a>
+                <a href="#contact" class="btn btn-primary" style="width: 100%">Cere Ofertă</a>
             </div>
         </div>
     </section>
@@ -862,97 +901,25 @@
         </div>
     </section>
 
-    <!-- Form Section -->
-    <section class="form-section" id="formular">
-        <div class="section-header">
-            <div class="section-label">Contact</div>
-            <h2 class="section-title">Cere Oferta Ta Personalizată</h2>
-            <p class="section-subtitle">Răspundem în maxim 2 ore în timpul lucrător</p>
-        </div>
-        <div class="form-container">
-            <form id="contactForm" onsubmit="handleSubmit(event)">
-                <div class="form-group">
-                    <label for="name">Numele Tău *</label>
-                    <input type="text" id="name" name="name" required placeholder="ex: Andrei Popescu">
-                </div>
-                <div class="form-group">
-                    <label for="phone">Număr de Telefon *</label>
-                    <input type="tel" id="phone" name="phone" required placeholder="ex: 07xx xxx xxx">
-                </div>
-                <div class="form-group">
-                    <label for="car">Model Mașină *</label>
-                    <input type="text" id="car" name="car" required placeholder="ex: BMW Seria 3 2022">
-                </div>
-                <div class="form-group">
-                    <label for="package">Pachet Dorit</label>
-                    <select id="package" name="package">
-                        <option value="">Nu sunt sigur încă</option>
-                        <option value="partial">Parțial (400€+)</option>
-                        <option value="complet">Complet (1200€+)</option>
-                        <option value="premium">Premium (2500€+)</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="message">Mesaj (opțional)</label>
-                    <textarea id="message" name="message" placeholder="Întrebări sau detalii suplimentare..."></textarea>
-                </div>
-                <button type="submit" class="form-submit">🚀 Cere Ofertă Personalizată</button>
-            </form>
-            <div class="urgency">
-                <p>⚠️ Doar 5 locuri disponibile luna aceasta</p>
-                <p style="color: var(--gray); font-weight: 400; margin-top: 8px;">Rezervă acum pentru a prinde o programare</p>
-            </div>
+    <!-- CTA Section -->
+    <section class="cta-section" id="contact">
+        <h2>Protejează-ți Mașina Azi!</h2>
+        <p>Programare rapidă + ofertă personalizată în maxim 2 ore</p>
+        <div class="cta-buttons">
+            <a href="https://wa.me/40700000000" class="btn btn-white">💬 WhatsApp Acum</a>
+            <a href="tel:+40700000000" class="btn btn-outline">📞 Sună Acum</a>
         </div>
     </section>
 
     <!-- Footer -->
     <footer>
-        <p>© 2026 Folie Protecție PPF. Toate drepturile rezervate.</p>
+        <p>© 2026 PPF Protect. Toate drepturile rezervate.</p>
     </footer>
 
-    <!-- Sticky CTA -->
+    <!-- Sticky Mobile CTA -->
     <div class="sticky-cta">
-        <a href="tel:+40700000000" class="btn-secondary">📞 Sună Acum</a>
-        <a href="#formular" class="btn-primary">Cere Ofertă</a>
+        <a href="tel:+40700000000" style="background: rgba(255,255,255,0.1); color: white;">📞 Sună</a>
+        <a href="https://wa.me/40700000000" style="background: #25D366; color: white;">💬 WhatsApp</a>
     </div>
-
-    <script>
-        function handleSubmit(e) {
-            e.preventDefault();
-            
-            const formData = {
-                name: document.getElementById('name').value,
-                phone: document.getElementById('phone').value,
-                car: document.getElementById('car').value,
-                package: document.getElementById('package').value,
-                message: document.getElementById('message').value
-            };
-
-            // Save to localStorage for now
-            const submissions = JSON.parse(localStorage.getItem('ppf_submissions') || '[]');
-            submissions.push({ ...formData, date: new Date().toISOString() });
-            localStorage.setItem('ppf_submissions', JSON.stringify(submissions));
-
-            // Show success message
-            alert('Mulțumim! Cererea ta a fost trimisă. Te contactăm în maxim 2 ore.');
-            
-            // Reset form
-            e.target.reset();
-
-            // In production: send to backend/email
-            console.log('Form submission:', formData);
-        }
-
-        // Smooth scroll for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }
-            });
-        });
-    </script>
 </body>
 </html>
